@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:food_panda/splash_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,12 +17,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('flutter'),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }
