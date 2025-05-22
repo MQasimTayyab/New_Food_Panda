@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_panda/Application/Services/Navigation_Services.dart';
 import 'package:food_panda/Data/image_path.dart';
 import 'package:food_panda/Presentation/Widgets/home_page.dart';
@@ -25,15 +26,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-            width: double.infinity,
-            child: AssetImages(
-              issvg: false,
-              imagepath: ImagePath.startpage,
-            )),
-      ),
+    return Scaffold(
+      body: Container(
+          width: double.infinity.w,
+          child: AssetImages(
+            issvg: false,
+            imagepath: ImagePath.startpage,
+          )),
     );
   }
 }
