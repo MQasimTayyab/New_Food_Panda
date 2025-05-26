@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_panda/Data/App_Colors.dart';
-// extension TextScaler on BuildContext {
-//   double get TextScaler {
-//     final Textscale = MediaQuery.of(this).textScaler;
-//     return Textscale > 1 ? 0.9 : Textscale ;
-//   }
-// }
+import 'package:food_panda/Data/app_colors.dart';
+
+extension Scale on BuildContext {
+  double get textScale => MediaQuery.of(this).textScaleFactor;
+}
 
 class AppStyles {
   static TextStyle textstyleone(
     BuildContext context, {
     double? fontsize,
     Color? color,
-    FontWeight? FontWeight,
+    FontWeight? fontWeight,
     String? fontFamily,
   }) {
     return TextStyle(
       fontSize: fontsize ?? 8.sp,
       color: color ?? AppColors.black,
       fontFamily: fontFamily ?? 'Poppine',
+      fontWeight: fontWeight ?? FontWeight.bold,
     );
   }
 
@@ -27,27 +26,28 @@ class AppStyles {
     BuildContext context, {
     double? fontsize,
     Color? color,
-    FontWeight? FontWeight,
+    FontWeight? fontWeight,
     String? fontFamily,
   }) {
     return TextStyle(
-      fontSize: fontsize ?? 10.sp,
-      color: color ?? AppColors.black,
-      fontFamily: fontFamily ?? 'Poppine',
-    );
+        fontSize: fontsize ?? 10.sp,
+        color: color ?? AppColors.black,
+        fontFamily: fontFamily ?? 'Poppine',
+        fontWeight: fontWeight ?? FontWeight.w400);
   }
 
   static TextStyle textstylethree(
     BuildContext context, {
     double? fontsize,
     Color? color,
-    FontWeight? FontWeight,
+    FontWeight? fontWeight,
     String? fontFamily,
   }) {
     return TextStyle(
       fontSize: fontsize ?? 12.sp,
       color: color ?? AppColors.black,
       fontFamily: fontFamily ?? 'Poppine',
+      fontWeight: fontWeight ?? FontWeight.w500,
     );
   }
 
@@ -55,13 +55,29 @@ class AppStyles {
     BuildContext context, {
     double? fontsize,
     Color? color,
-    FontWeight? FontWeight,
+    FontWeight? fontWeight,
     String? fontFamily,
   }) {
     return TextStyle(
       fontSize: fontsize ?? 14.sp,
       color: color ?? AppColors.black,
       fontFamily: fontFamily ?? 'Poppine',
+      fontWeight: fontWeight ?? FontWeight.w600,
+    );
+  }
+
+  static TextStyle textstylefive(
+    BuildContext context, {
+    double? fontsize,
+    Color? color,
+    FontWeight? fontWeight,
+    String? fontFamily,
+  }) {
+    return TextStyle(
+      fontSize: fontsize ?? 22.sp,
+      color: color ?? AppColors.black,
+      fontFamily: fontFamily ?? 'Poppine',
+      fontWeight: fontWeight ?? FontWeight.bold,
     );
   }
 }

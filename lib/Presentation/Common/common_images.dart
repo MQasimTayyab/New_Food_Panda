@@ -8,11 +8,13 @@ class AssetImages extends StatelessWidget {
     this.issvg = true,
     this.height,
     this.width,
+    this.fit,
   });
   final String imagepath;
   final bool issvg;
   final double? height;
   final double? width;
+  final BoxFit? fit;
   @override
   Widget build(BuildContext context) {
     if (issvg) {
@@ -20,14 +22,14 @@ class AssetImages extends StatelessWidget {
         imagepath,
         height: height,
         width: width,
-        fit: BoxFit.contain,
+        fit: fit ?? BoxFit.contain,
       );
     } else {
       return Image.asset(
         imagepath,
         height: height,
         width: width,
-        fit: BoxFit.contain,
+        fit: fit ?? BoxFit.contain,
       );
     }
   }

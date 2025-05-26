@@ -4,22 +4,22 @@ class AppStrings {
   static const String johartownl = 'Johar Town Lahore';
   static const String goodevenig = 'Good Evening, Mehroz';
   static const String whatsfordinner =
-      'What’s for dinner?There are 567restaurants in your area';
+      'What’s for dinner?There are 567\nrestaurants in your area';
   static const String searchforshops = 'Search for shops & restaurants';
   static const String fooddelivery = 'Food delivery';
   static const String orderfoodyoulove = 'Order food you love';
   static const String pandamart = 'pandamart';
-  static const String everydayupto20 = 'Everyday up to 20% off';
+  static const String everydayupto20 = 'Everyday up to \n20% off';
   static const String pickup = 'Pick-Up';
-  static const String everydayupto25 = 'Everyday up to 25% off';
+  static const String everydayupto25 = 'Everyday up to \n25% off';
   static const String shops = 'Shops';
   static const String grocery = 'Grocery & more..';
 
   static const String yourresturants = 'Your Restaurants';
   static const String foodfestdeals = 'Food Fest Deals';
   static const String thirtymints = '30 min';
-
   static const String subwaylahore = 'Subway - Lahore';
+  static const String broadway = 'Broadway Pizza-';
   static const String fastfoodamerican = 'Fast Food,American,Meat,Halal';
   static const String pkrsixtydelivery = 'PKR 60 delivery fee';
 //Foodfastdeals
@@ -28,7 +28,7 @@ class AppStrings {
   static const String deliverythirty = 'Delivery: 30 min';
   static const String starfour = '4.2 (5k+)';
   static const String getrs =
-      'Get Rs.150 off your first order with Everyday favourite by using code: HCNC. T&C apply';
+      'Get Rs.150 off your first order with Everyday\n favourite by using code: HCNC. T&C apply';
   static const String populr = 'Popular';
   static const String exclusionsubwaydeal = 'Exclusion Subway Deals ';
   static const String crazydeal = 'Crazy Deals';

@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_panda/Application/Services/Navigation_Services.dart';
-import 'package:food_panda/Data/image_path.dart';
-import 'package:food_panda/Presentation/Widgets/home_page.dart';
+import 'package:food_panda/Data/dimenstion.dart';
+import 'package:food_panda/Data/imagepath.dart';
+
+import 'package:food_panda/Presentation/Widgets/Home/home_page.dart';
 
 import 'Presentation/Common/common_images.dart';
 
@@ -28,8 +29,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          width: double.infinity.w,
+          width: Dimenstion.screenWidth,
+          height: Dimenstion.screenHeight,
           child: AssetImages(
+            fit: BoxFit.fill,
             issvg: false,
             imagepath: ImagePath.startpage,
           )),

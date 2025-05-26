@@ -7,4 +7,5 @@ class AppColors {
   static const Color skblue = Color(0xff85C0FC);
   static const Color black = Color(0xff000000);
   static const Color grey = Colors.grey;
+  static const Color lightpink = Color(0xffEB9FBE);
 }
