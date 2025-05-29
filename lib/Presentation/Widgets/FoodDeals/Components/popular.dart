@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_panda/Application/Services/Navigation_Services.dart';
+import 'package:food_panda/Data/app_colors.dart';
 import 'package:food_panda/Data/app_strings.dart';
 import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/extenstions.dart';
@@ -26,18 +27,21 @@ Padding Popular(BuildContext context) {
                   issvg: true,
                   imagepath: ImagePath.firesvg,
                 ),
+                3.x,
                 CommonText(
                   text: AppStrings.populr,
                   style: AppStyles.textstylefive(context),
                 )
               ],
             ),
+            5.Y,
             CommonText(
               text: AppStrings.mostorderrightnow,
               style: AppStyles.textstylethree(context),
             )
           ],
         ),
+        15.Y,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -51,8 +55,9 @@ Padding Popular(BuildContext context) {
                 ),
                 CommonText(
                   text: AppStrings.sixinchsub,
-                  style: AppStyles.textstyleone(context),
+                  style: AppStyles.textstyletwo(context),
                 ),
+                15.Y,
                 Row(
                   children: [
                     CommonText(
@@ -60,10 +65,17 @@ Padding Popular(BuildContext context) {
                       style: AppStyles.textstyleone(context),
                     ),
                     10.x,
-                    CommonText(
-                      text: AppStrings.rstwofifity,
-                      style: AppStyles.textstyleone(context),
+                    Text(
+                      AppStrings.rsfiftyfive,
+                      style: TextStyle(
+                          fontSize: 8.sp,
+                          color: AppColors.black.withOpacity(0.7),
+                          decoration: TextDecoration.lineThrough),
                     )
+                    // CommonText(
+                    //   text: AppStrings.rsfiftyfive,
+                    //   style: AppStyles.textstyleone(context),
+                    // )
                   ],
                 )
               ],
@@ -81,7 +93,7 @@ Padding Popular(BuildContext context) {
             )
           ],
         ),
-        25.Y,
+        15.Y,
 
         //line
         Container(
@@ -102,22 +114,33 @@ Padding Popular(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CommonText(
                   text: AppStrings.drinksandcookie,
                   style: AppStyles.textstylethree(context,
                       fontWeight: FontWeight.bold),
                 ),
+                5.Y,
                 Row(
                   children: [
                     CommonText(
                       text: AppStrings.rsonesisty,
                       style: AppStyles.textstyleone(context),
                     ),
-                    CommonText(
-                      text: AppStrings.rstwofifity,
-                      style: AppStyles.textstyleone(context),
+                    10.x,
+
+                    Text(
+                      AppStrings.rsfiftyfive,
+                      style: TextStyle(
+                          fontSize: 8.sp,
+                          color: AppColors.black.withOpacity(0.7),
+                          decoration: TextDecoration.lineThrough),
                     )
+                    // CommonText(
+                    //   text: AppStrings.rstwofifity,
+                    //   style: AppStyles.textstyleone(context),
+                    // )
                   ],
                 )
               ],
@@ -130,7 +153,7 @@ Padding Popular(BuildContext context) {
             )
           ],
         ),
-        15.Y,
+        10.Y,
 //line
         Container(
           decoration: BoxDecoration(

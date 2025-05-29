@@ -18,7 +18,7 @@ class AppStyles {
       fontSize: fontsize ?? 8.sp,
       color: color ?? AppColors.black,
       fontFamily: fontFamily ?? 'Poppine',
-      fontWeight: fontWeight ?? FontWeight.bold,
+      fontWeight: fontWeight ?? FontWeight.w500,
     );
   }
 

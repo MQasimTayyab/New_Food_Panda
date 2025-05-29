@@ -72,4 +72,6 @@ class AppStrings {
   static const String rsfoureigh = 'Rs.482.60';
   static const String total = 'Total ';
   static const String placeorder = 'Place order';
+  static const String sub = '_';
+  static const String add = '+';
 }

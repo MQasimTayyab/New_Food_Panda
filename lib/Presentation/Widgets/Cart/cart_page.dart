@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_panda/Application/Services/Navigation_Services.dart';
 import 'package:food_panda/Data/app_colors.dart';
 import 'package:food_panda/Data/app_strings.dart';
 import 'package:food_panda/Data/app_styles.dart';
@@ -37,12 +38,17 @@ class CartPage extends StatelessWidget {
             ],
           ),
         ),
-        leading: AssetImages(
-          fit: BoxFit.scaleDown,
-          width: 18.w,
-          height: 16.h,
-          issvg: true,
-          imagepath: ImagePath.cross,
+        leading: Center(
+          child: GestureDetector(
+            onTap: () {
+              Navigate.pop(context);
+            },
+            child: AssetImages(
+                width: 18.w,
+                height: 16.h,
+                issvg: true,
+                imagepath: ImagePath.cross),
+          ),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,64 +57,72 @@ class CartPage extends StatelessWidget {
                 text: AppStrings.cart,
                 style: AppStyles.textstyletwo(context,
                     color: AppColors.pink, fontWeight: FontWeight.bold)),
+            CommonText(
+                text: AppStrings.subwayjohartown,
+                style: AppStyles.textstyletwo(
+                  context,
+                )),
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               //rider components
               Rider(context),
-              20.Y,
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 38.w,
-                        height: 28.h,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFC4C4C4),
-                          shape: BoxShape.rectangle,
+              30.Y,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 38.w,
+                          height: 28.h,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFC4C4C4),
+                            shape: BoxShape.rectangle,
+                          ),
+                          child: Center(child: CommonText(text: '1')),
                         ),
-                        child: Center(child: CommonText(text: '1')),
-                      ),
-                      10.x,
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CommonText(
-                                  text: AppStrings.exclusivesubwaydealone,
-                                  style: AppStyles.textstyletwo(context,
-                                      color: AppColors.pink),
-                                ),
-                                CommonText(
-                                  text: AppStrings.chickenteriyakimirnda,
-                                  style: AppStyles.textstyleone(context),
-                                ),
-                              ],
-                            ),
-                            CommonText(
-                              text: AppStrings.rsfiftyfive,
-                              style: AppStyles.textstyleone(context),
-                            )
-                          ],
+                        10.x,
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CommonText(
+                                    text: AppStrings.exclusivesubwaydealone,
+                                    style: AppStyles.textstyletwo(context,
+                                        color: AppColors.pink),
+                                  ),
+                                  2.Y,
+                                  CommonText(
+                                    text: AppStrings.chickenteriyakimirnda,
+                                    style: AppStyles.textstyleone(context),
+                                  ),
+                                ],
+                              ),
+                              CommonText(
+                                text: AppStrings.rsfivesixt,
+                                style: AppStyles.textstyleone(context),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  150.Y,
-                  // subtatal compoents
-                  SubTotal(context)
-                ],
+                      ],
+                    ),
+                    120.Y,
+                    // subtatal compoents
+                    SubTotal(context)
+                  ],
+                ),
               ),
-              350.Y,
+              190.Y,
               // total ammount compnents
               Total(context)
             ],

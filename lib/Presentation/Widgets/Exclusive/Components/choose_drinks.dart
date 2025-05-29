@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_panda/Data/app_colors.dart';
 import 'package:food_panda/Data/app_strings.dart';
 import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/extenstions.dart';
@@ -43,7 +44,8 @@ Column ChooseDrinks() {
                       CommonText(
                         text: AppStrings.rszerozero,
                         style: AppStyles.textstylethree(context,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black.withOpacity(0.7)),
                       )
                     ],
                   ),
@@ -53,7 +55,7 @@ Column ChooseDrinks() {
           );
         },
       ),
-      10.Y,
+      15.Y,
       //second drink..
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -88,7 +90,8 @@ Column ChooseDrinks() {
                       CommonText(
                         text: AppStrings.rszerozero,
                         style: AppStyles.textstylethree(context,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black.withOpacity(0.7)),
                       )
                     ],
                   ),
@@ -98,7 +101,7 @@ Column ChooseDrinks() {
           );
         },
       ),
-      10.Y,
+      15.Y,
       //third drink
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -133,7 +136,8 @@ Column ChooseDrinks() {
                       CommonText(
                         text: AppStrings.rszerozero,
                         style: AppStyles.textstylethree(context,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black.withOpacity(0.7)),
                       )
                     ],
                   ),
@@ -143,7 +147,7 @@ Column ChooseDrinks() {
           );
         },
       ),
-      10.Y,
+      15.Y,
       //four drink
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -178,7 +182,8 @@ Column ChooseDrinks() {
                       CommonText(
                         text: AppStrings.rszerozero,
                         style: AppStyles.textstylethree(context,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.black.withOpacity(0.7)),
                       )
                     ],
                   ),

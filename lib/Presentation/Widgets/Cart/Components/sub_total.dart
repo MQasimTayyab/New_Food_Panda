@@ -79,7 +79,9 @@ Column SubTotal(BuildContext context) {
       Row(
         children: [
           AssetImages(
-            imagepath: ImagePath.firesvg,
+            width: 25.w,
+            height: 25.h,
+            imagepath: ImagePath.bookmark,
             issvg: true,
           ),
           20.x,

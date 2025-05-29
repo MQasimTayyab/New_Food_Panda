@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_panda/Application/Services/Navigation_Services.dart';
 import 'package:food_panda/Data/app_colors.dart';
 import 'package:food_panda/Data/app_strings.dart';
 import 'package:food_panda/Data/app_styles.dart';
@@ -14,6 +15,7 @@ Stack SubWay(BuildContext context) {
       Container(
         color: Color(0xffEBDBE2),
         height: 211.h,
+        width: 414.w,
         child: AssetImages(
           issvg: false,
           imagepath: ImagePath.subwayjohar,
@@ -21,7 +23,7 @@ Stack SubWay(BuildContext context) {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.only(left: 25, right: 25, top: 10),
+        padding: const EdgeInsets.only(left: 25, right: 25, top: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -30,9 +32,18 @@ Stack SubWay(BuildContext context) {
               height: 30.h,
               decoration: BoxDecoration(
                   color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-              child: AssetImages(
-                issvg: true,
-                imagepath: ImagePath.cross,
+              child: GestureDetector(
+                onTap: () {
+                  Navigate.pop(context);
+                },
+                child: Center(
+                  child: AssetImages(
+                    width: 15.w,
+                    height: 14.h,
+                    issvg: true,
+                    imagepath: ImagePath.back,
+                  ),
+                ),
               ),
             ),
             Row(
@@ -42,9 +53,13 @@ Stack SubWay(BuildContext context) {
                   height: 30.h,
                   decoration: BoxDecoration(
                       color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-                  child: AssetImages(
-                    issvg: true,
-                    imagepath: ImagePath.cross,
+                  child: Center(
+                    child: AssetImages(
+                      width: 15.w,
+                      height: 17.h,
+                      issvg: true,
+                      imagepath: ImagePath.sharesvg,
+                    ),
                   ),
                 ),
                 5.x,
@@ -53,9 +68,13 @@ Stack SubWay(BuildContext context) {
                   height: 30.h,
                   decoration: BoxDecoration(
                       color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-                  child: AssetImages(
-                    issvg: true,
-                    imagepath: ImagePath.cross,
+                  child: Center(
+                    child: AssetImages(
+                      width: 20.w,
+                      height: 20.h,
+                      issvg: true,
+                      imagepath: ImagePath.infosvg,
+                    ),
                   ),
                 ),
               ],
@@ -82,8 +101,10 @@ Stack SubWay(BuildContext context) {
               child: Center(
                 child: CommonText(
                   text: AppStrings.deliverythirty,
-                  style:
-                      AppStyles.textstyleone(context, color: AppColors.white),
+                  style: AppStyles.textstyleone(
+                    context,
+                    color: AppColors.white,
+                  ),
                 ),
               ),
             ),

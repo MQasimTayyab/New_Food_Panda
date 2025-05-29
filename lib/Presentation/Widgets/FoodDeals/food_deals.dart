@@ -15,20 +15,22 @@ class FoodDeals extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            //subway images components
-            SubWay(context),
-            //get rs fift....
-            CustomBanner(
-              context,
-            ),
-            //popular
-            10.Y,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              //subway images components
+              SubWay(context),
+              //get rs fift....
+              CustomBanner(
+                context,
+              ),
+              //popular
+              20.Y,
 
-            Popular(context)
-          ],
+              Popular(context)
+            ],
+          ),
         ),
       ),
     );

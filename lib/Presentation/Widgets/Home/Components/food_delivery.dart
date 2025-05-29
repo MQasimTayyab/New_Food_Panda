@@ -12,7 +12,7 @@ Row FoodDelivery(BuildContext context) {
   return Row(
     children: [
       Container(
-        width: 315.w,
+        width: 320.w,
         height: 135.h,
         decoration: BoxDecoration(
           color: AppColors.pink,

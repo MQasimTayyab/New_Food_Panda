@@ -9,10 +9,10 @@ import 'package:food_panda/Data/imagepath.dart';
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/FoodDeals/food_deals.dart';
-
 import 'package:food_panda/Presentation/Widgets/Home/Components/appbar.dart';
 import 'package:food_panda/Presentation/Widgets/Home/Components/food_delivery.dart';
 import 'package:food_panda/Presentation/Widgets/Home/Components/good_evening.dart';
+import 'package:food_panda/Presentation/Widgets/Home/Components/stack_images.dart';
 import 'package:food_panda/Presentation/Widgets/Home/Components/three_containers.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,206 +29,107 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColors.white,
       //Appbar components..
       appBar: CustomAppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
-              //goodeving
               GoodEvening(context),
-              Column(
-                children: [
-                  TextField(
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          prefixIcon: Padding(
-                            padding: EdgeInsets.all(3),
-                            child: Icon(
-                              Icons.search,
-                              color: AppColors.pink,
-                            ),
-                          ),
-                          labelText: 'Search for shops & resturants',
-                          labelStyle: AppStyles.textstyleone(context)))
-                ],
-              ),
-              // 3.Y,
-              //food deliver components
-              FoodDelivery(context),
-              //
-              15.Y,
-              //pandamart,pickup and shop container
-
-              ThreeContainers(context),
-              20.Y,
-
-              Row(
-                children: [
-                  CommonText(
-                    text: AppStrings.yourresturants,
-                    style: AppStyles.textstylefour(context),
-                  )
-                ],
-              ),
-              15.Y,
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
                   children: [
-                    Column(
+                    //goodeving
+
+                    15.Y,
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        right: 25,
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 320.w,
+                            height: 30.h,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    offset: Offset(3, 3),
+                                  )
+                                ]),
+                            child: TextField(
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    prefixIcon: Padding(
+                                        padding: EdgeInsets.all(3),
+                                        child: AssetImages(
+                                          width: 20.w,
+                                          height: 18.h,
+                                          imagepath: ImagePath.searchsvg,
+                                        )),
+                                    labelText: 'Search for shops & resturants',
+                                    labelStyle: AppStyles.textstyletwo(context,
+                                        color:
+                                            AppColors.black.withOpacity(0.5)))),
+                          )
+                        ],
+                      ),
+                    ),
+                    15.Y,
+                    // 3.Y,
+                    //food deliver components
+                    FoodDelivery(context),
+                    //
+                    15.Y,
+                    //pandamart,pickup and shop container
+
+                    ThreeContainers(context),
+                    20.Y,
+
+                    Row(
                       children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigate.to(context, FoodDeals());
-                          },
-                          child: Stack(
-                            children: [
-                              AssetImages(
-                                issvg: false,
+                        CommonText(
+                          text: AppStrings.yourresturants,
+                          style: AppStyles.textstylefour(context),
+                        )
+                      ],
+                    ),
+                    15.Y,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigate.to(context, FoodDeals());
+                            },
+                            child: StackImages(
                                 imagepath: ImagePath.imageone,
-                                // width: 203.w,
-                                height: 100.h,
-                              ),
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 3),
-                                    child: Container(
-                                      width: 68.w,
-                                      height: 18.h,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.pink,
-                                          borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(50.r),
-                                              bottomRight:
-                                                  Radius.circular(50.r))),
-                                      child: Center(
-                                        child: CommonText(
-                                          text: AppStrings.foodfestdeals,
-                                          style: AppStyles.textstyleone(context,
-                                              color: AppColors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  30.Y,
-                                  //30mints
-                                  Container(
-                                    width: 40.w,
-                                    height: 21.h,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: Center(
-                                      child: CommonText(
-                                        text: AppStrings.thirtymints,
-                                        style: AppStyles.textstyleone(
-                                          context,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
+                                label: AppStrings.foodfestdeals,
+                                time: AppStrings.thirtymints,
+                                title: AppStrings.subwaylahore,
+                                subtitle: AppStrings.fastfoodamerican,
+                                deliveryfee: AppStrings.pkrsixtydelivery),
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CommonText(
-                              text: AppStrings.subwaylahore,
-                              style: AppStyles.textstylefour(context),
-                            ),
-                            CommonText(
-                              text: AppStrings.fastfoodamerican,
-                              style: AppStyles.textstyleone(context),
-                            ),
-                            CommonText(
-                              text: AppStrings.pkrsixtydelivery,
-                              style: AppStyles.textstylethree(context),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                    5.x,
-                    //image two container start...
-                    Column(
-                      children: [
-                        Stack(
-                          children: [
-                            AssetImages(
-                              issvg: false,
-                              imagepath: ImagePath.drinksandcookie,
-                              // width: 104.w,
-                              height: 99.h,
-                            ),
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 3),
-                                  child: Container(
-                                    width: 68.w,
-                                    height: 18.h,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.pink,
-                                        borderRadius: BorderRadius.only(
-                                            topRight: Radius.circular(50),
-                                            bottomRight: Radius.circular(50))),
-                                    child: Center(
-                                      child: CommonText(
-                                        text: AppStrings.foodfestdeals,
-                                        style: AppStyles.textstyleone(context,
-                                            color: AppColors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                50.Y,
-                                //30mints
-                                Container(
-                                  width: 40.w,
-                                  height: 21.h,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(15)),
-                                  child: Center(
-                                    child: CommonText(
-                                      text: AppStrings.thirtymints,
-                                      style: AppStyles.textstyleone(
-                                        context,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CommonText(
-                              text: AppStrings.broadway,
-                              style: AppStyles.textstylefour(context),
-                            ),
-                            CommonText(
-                              text: AppStrings.fastfoodamerican,
-                              style: AppStyles.textstyleone(context),
-                            ),
-                            CommonText(
-                              text: AppStrings.pkrsixtydelivery,
-                              style: AppStyles.textstylethree(context),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
+
+                          5.x,
+                          //image two container start...
+                          StackImages(
+                            imagepath: ImagePath.broadway,
+                            label: AppStrings.foodfestdeals,
+                            time: AppStrings.thirtymints,
+                            title: AppStrings.broadway,
+                            subtitle: AppStrings.fastfoodamerican,
+                            deliveryfee: AppStrings.pkrsixtydelivery,
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

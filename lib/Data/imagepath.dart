@@ -14,7 +14,7 @@ class ImagePath {
   static const exclusive = 'assets/images/Rectangle 19.png';
   static const goodevening = 'assets/images/fishAndFries.png';
   static const sharesvg = 'assets/svg/Vector.svg';
-  static const cross = 'assets/svg/times.png';
+  static const cross = 'assets/svg/times.svg';
   static const searchsvg = 'assets/svg/search.svg';
   static const infosvg = 'assets/svg/info-circle.svg';
   static const heartsvg = 'assets/svg/heart.svg';
@@ -25,4 +25,7 @@ class ImagePath {
   static const firesvg = 'assets/svg/fire.svg';
   static const rider = 'assets/images/rider.png';
   static const panda = 'assets/images/panda.png';
+  static const back = 'assets/svg/backarrow.svg';
+  static const bookmark = 'assets/svg/bookmark.svg';
+  static const broadway = 'assets/images/broadway.png';
 }

@@ -9,7 +9,7 @@ import 'package:food_panda/Presentation/Common/common_text.dart';
 
 Padding Rider(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.only(top: 10),
+    padding: const EdgeInsets.only(top: 20),
     child: Container(
       decoration: BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(
@@ -27,17 +27,18 @@ Padding Rider(BuildContext context) {
             height: 52.h,
             imagepath: ImagePath.rider,
           ),
-          20.x,
+          30.x,
           Padding(
             padding: const EdgeInsets.only(top: 25),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CommonText(
                   text: AppStrings.estimatedeliver,
                   style: AppStyles.textstyletwo(context),
                 ),
                 CommonText(
-                  text: AppStrings.thirtymints,
+                  text: AppStrings.nowtwentfive,
                   style: AppStyles.textstylefour(context),
                 )
               ],

@@ -21,7 +21,7 @@ Row ThreeContainers(BuildContext context) {
               borderRadius: BorderRadius.circular(5),
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(top: 15),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,7 +123,8 @@ Row ThreeContainers(BuildContext context) {
                     children: [
                       CommonText(
                         text: AppStrings.shops,
-                        style: AppStyles.textstylethree(context),
+                        style: AppStyles.textstylefour(context,
+                            fontWeight: FontWeight.w600),
                       ),
                       CommonText(
                         text: AppStrings.grocery,

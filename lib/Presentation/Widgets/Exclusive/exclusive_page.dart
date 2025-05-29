@@ -22,154 +22,267 @@ class ExclusivePage extends StatefulWidget {
 }
 
 class _ExclusivePageState extends State<ExclusivePage> {
+  final ValueNotifier<int> _counter = ValueNotifier<int>(1);
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(-1);
   final ValueNotifier<String> selectedFlavor = ValueNotifier<String>('');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            //exclusive image components
-            // ExclusivePage(),
-            Stack(
-              children: [
-                AssetImages(
-                  height: 210.h,
-                  imagepath: ImagePath.exclusive,
-                  issvg: false,
-                ),
-                Container(
-                  width: 30.w,
-                  height: 30.h,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-                  child: AssetImages(
-                    issvg: true,
-                    imagepath: ImagePath.alignsvg,
-                  ),
-                ),
-              ],
-            ),
-            10.Y,
-
-            //exclusive parent colume
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              //exclusive image components
+              // ExclusivePage(),
+              Column(
                 children: [
-                  ExclusiveText(context),
-                  5.Y,
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(
-                          width: 1.w,
-                          color: Colors.grey.withOpacity(0.3),
+                  Stack(
+                    children: [
+                      AssetImages(
+                        height: 210.h,
+                        width: 375.w,
+                        imagepath: ImagePath.exclusive,
+                        issvg: false,
+                        fit: BoxFit.fill,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15, top: 15),
+                        child: Container(
+                          width: 30.w,
+                          height: 30.h,
+                          decoration: BoxDecoration(
+                              color: Color(0xFFC4C4C4), shape: BoxShape.circle),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigate.pop(context);
+                            },
+                            child: Center(
+                              child: AssetImages(
+                                width: 15.w,
+                                height: 14.h,
+                                issvg: true,
+                                imagepath: ImagePath.back,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              30.Y,
+
+              //exclusive parent colume
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  children: [
+                    ExclusiveText(context),
+                    20.Y,
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            width: 1.w,
+                            color: Colors.grey.withOpacity(0.3),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  5.Y,
-                  //choose flavor
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CommonText(
-                            text: AppStrings.chooseyourflavor,
-                            style: AppStyles.textstylethree(context),
-                          ),
-                          Container(
-                            width: 54.w,
-                            height: 16.h,
-                            decoration: BoxDecoration(
-                                color: Color(0xffB7D6F4),
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                              child: CommonText(
-                                text: AppStrings.onerequired,
-                                style: AppStyles.textstyleone(context),
-                              ),
+                    15.Y,
+                    //choose flavor
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CommonText(
+                              text: AppStrings.chooseyourflavor,
+                              style: AppStyles.textstylethree(context),
                             ),
-                          )
-                        ],
-                      ),
-                      CommonText(
-                        text: AppStrings.select,
-                        style: AppStyles.textstylethree(context),
-                      )
-                    ],
-                  ),
-                  //value notifer
-                  //
-                  ChooseFlavor(),
-                  25.Y,
+                            Container(
+                              width: 54.w,
+                              height: 16.h,
+                              decoration: BoxDecoration(
+                                  color: Color(0xffB7D6F4),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                child: CommonText(
+                                  text: AppStrings.onerequired,
+                                  style: AppStyles.textstyleone(context),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        5.Y,
+                        CommonText(
+                          text: AppStrings.select,
+                          style: AppStyles.textstylethree(context),
+                        )
+                      ],
+                    ),
+                    10.Y,
+                    //value notifer
+                    //
+                    ChooseFlavor(),
+                    25.Y,
 
-                  //choose drinks
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CommonText(
-                            text: AppStrings.chooseyoursoftdrink,
-                            style: AppStyles.textstylethree(context),
-                          ),
-                          Container(
-                            width: 54.w,
-                            height: 16.h,
-                            decoration: BoxDecoration(
-                                color: Color(0xffB7D6F4),
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                              child: CommonText(
-                                text: AppStrings.onerequired,
-                                style: AppStyles.textstyleone(context),
-                              ),
+                    //choose drinks
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CommonText(
+                              text: AppStrings.chooseyoursoftdrink,
+                              style: AppStyles.textstylethree(context),
                             ),
-                          )
-                        ],
-                      ),
-                      CommonText(
-                        text: AppStrings.select,
-                        style: AppStyles.textstylethree(context),
-                      )
-                    ],
-                  ),
-                  10.Y,
-                  //value
-                  //drinks components
-                  ChooseDrinks()
-                ],
+                            Container(
+                              width: 54.w,
+                              height: 16.h,
+                              decoration: BoxDecoration(
+                                  color: Color(0xffB7D6F4),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Center(
+                                child: CommonText(
+                                  text: AppStrings.onerequired,
+                                  style: AppStyles.textstyleone(context),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        5.Y,
+                        CommonText(
+                          text: AppStrings.select,
+                          style: AppStyles.textstylethree(context),
+                        )
+                      ],
+                    ),
+
+                    10.Y,
+                    //value
+                    //drinks components
+                    ChooseDrinks()
+                  ],
+                ),
               ),
-            ),
-            //button and increment
-            15.Y,
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    width: 1.w,
-                    color: Colors.grey.withOpacity(0.3),
+              20.Y,
+
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 1.w,
+                      color: Colors.grey.withOpacity(0.3),
+                    ),
                   ),
                 ),
               ),
-            ),
+              20.Y,
 
-            15.Y,
-            // button
+              //button and increment
 
-            CommonButton(
-                text: AppStrings.addtocart,
-                onPressed: () {
-                  Navigate.to(context, CartPage());
-                })
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ValueListenableBuilder<int>(
+                        valueListenable: _counter,
+                        builder: (context, value, child) {
+                          return Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  if (_counter.value > 1) {
+                                    _counter.value--;
+                                  }
+                                },
+                                child: Container(
+                                  width: 35.w,
+                                  height: 35.h,
+                                  decoration: BoxDecoration(
+                                    color: value > 1
+                                        ? AppColors.pink
+                                        : Color(0xFFDADADA),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(
+                                      child: Icon(
+                                    Icons.remove,
+                                    color: AppColors.white,
+                                  )
+
+                                      // child: CommonText(
+                                      //   text: AppStrings.sub,
+                                      //   style: AppStyles.textstylefive(context,
+                                      //       color: AppColors.white),
+                                      // ),
+                                      ),
+                                ),
+                              ),
+                              10.x,
+
+                              // Counter value display
+                              ValueListenableBuilder<int>(
+                                valueListenable: _counter,
+                                builder: (context, value, child) {
+                                  return Center(
+                                    child: CommonText(
+                                      text: value.toString(),
+                                      style: AppStyles.textstylefive(context),
+                                    ),
+                                  );
+                                },
+                              ),
+                              10.x,
+
+                              // Increment button
+                              GestureDetector(
+                                onTap: () {
+                                  _counter.value++;
+                                },
+                                child: Container(
+                                  width: 35.w,
+                                  height: 35.h,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.pink,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.add,
+                                      color: AppColors.white,
+                                    ),
+                                    // child: CommonText(
+                                    //   text: AppStrings.add,
+                                    //   style: AppStyles.textstylefive(context,
+                                    //       color: AppColors.white),
+                                    // ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }),
+                    CommonButton(
+                        text: AppStrings.addtocart,
+                        onPressed: () {
+                          Navigate.to(context, CartPage());
+                        })
+                  ],
+                ),
+              ),
+
+              // button
+            ],
+          ),
         ),
       ),
     );

@@ -1,10 +1,16 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:food_panda/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(DevicePreview(
+      enabled: false,
+      tools: const [
+        ...DevicePreview.defaultTools,
+      ],
+      builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatefulWidget {

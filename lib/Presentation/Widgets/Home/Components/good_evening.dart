@@ -8,19 +8,22 @@ import 'package:food_panda/Presentation/Common/common_text.dart';
 
 Padding GoodEvening(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 20),
+    padding: const EdgeInsets.only(left: 25),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Column(
-          children: [
-            AssetImages(
-              issvg: false,
-              imagepath: ImagePath.goodevening,
-              width: 110.w,
-              height: 73.33.h,
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Column(
+            children: [
+              AssetImages(
+                issvg: false,
+                imagepath: ImagePath.goodevening,
+                width: 110.w,
+                height: 73.33.h,
+              ),
+            ],
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,7 +33,7 @@ Padding GoodEvening(BuildContext context) {
               children: [
                 CommonText(
                   text: AppStrings.goodevenig,
-                  style: AppStyles.textstyletwo(context,
+                  style: AppStyles.textstylefour(context,
                       fontWeight: FontWeight.bold),
                 ),
                 CommonText(
