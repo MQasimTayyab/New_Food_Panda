@@ -26,7 +26,7 @@ class AppStrings {
 
   static const String subwayjohartown = 'Subway - Johar Town';
   static const String deliverythirty = 'Delivery: 30 min';
-  static const String starfour = '4.2 (5k+)';
+  static const String starfour = '★4.2 (5k+)';
   static const String getrs =
       'Get Rs.150 off your first order with Everyday\n favourite by using code: HCNC. T&C apply';
   static const String populr = 'Popular';

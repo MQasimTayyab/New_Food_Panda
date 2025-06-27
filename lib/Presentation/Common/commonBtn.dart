@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_panda/Data/app_colors.dart';
+import 'package:food_panda/Presentation/Common/common_text.dart';
 
 class CommonButton extends StatelessWidget {
   final String text;
@@ -40,6 +41,7 @@ class CommonButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(color: textColor ?? Colors.white),
+        textScaler: CommonText.textScaler,
       ),
     );
   }

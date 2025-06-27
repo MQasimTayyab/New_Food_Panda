@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:food_panda/Data/app_colors.dart';
 
 import 'package:food_panda/Data/extenstions.dart';
+import 'package:food_panda/Presentation/Widgets/Cart/Components/total_amount.dart';
 import 'package:food_panda/Presentation/Widgets/FoodDeals/Components/banner.dart';
 
 import 'package:food_panda/Presentation/Widgets/FoodDeals/Components/popular.dart';
 import 'package:food_panda/Presentation/Widgets/FoodDeals/Components/subway_images.dart';
 
-class FoodDeals extends StatelessWidget {
+class FoodDeals extends StatefulWidget {
   const FoodDeals({super.key});
 
+  @override
+  State<FoodDeals> createState() => _FoodDealsState();
+}
+
+class _FoodDealsState extends State<FoodDeals> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +28,7 @@ class FoodDeals extends StatelessWidget {
               //subway images components
               SubWay(context),
               //get rs fift....
-              CustomBanner(
-                context,
-              ),
+              CustomBanner(context),
               //popular
               20.Y,
 

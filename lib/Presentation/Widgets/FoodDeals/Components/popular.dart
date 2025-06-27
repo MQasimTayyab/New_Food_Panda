@@ -71,6 +71,7 @@ Padding Popular(BuildContext context) {
                           fontSize: 8.sp,
                           color: AppColors.black.withOpacity(0.7),
                           decoration: TextDecoration.lineThrough),
+                      textScaler: TextScaler.linear(1.0),
                     )
                     // CommonText(
                     //   text: AppStrings.rsfiftyfive,
@@ -131,11 +132,12 @@ Padding Popular(BuildContext context) {
                     10.x,
 
                     Text(
-                      AppStrings.rsfiftyfive,
+                      AppStrings.rstwofifity,
                       style: TextStyle(
                           fontSize: 8.sp,
                           color: AppColors.black.withOpacity(0.7),
                           decoration: TextDecoration.lineThrough),
+                      textScaler: TextScaler.linear(1.0),
                     )
                     // CommonText(
                     //   text: AppStrings.rstwofifity,

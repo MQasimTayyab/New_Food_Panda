@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_panda/Data/app_colors.dart';
 
-extension Scale on BuildContext {
-  double get textScale => MediaQuery.of(this).textScaleFactor;
-}
+// extension ScaleExtension on BuildContext {
+//   double get textScale => MediaQuery.of(this).textScaler.scale(1);
+//   // double get textScale => MediaQuery.of(this).textScaleFactor;
+// }
 
 class AppStyles {
+  // static const TextScaler textScaler = TextScaler.linear(1.2);
   static TextStyle textstyleone(
     BuildContext context, {
     double? fontsize,

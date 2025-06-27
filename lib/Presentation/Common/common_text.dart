@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CommonText extends StatelessWidget {
+  static const TextScaler textScaler = TextScaler.linear(1.0);
   final String text;
   final Color? color;
   final TextStyle? style;
@@ -17,6 +18,9 @@ class CommonText extends StatelessWidget {
     return Text(
       text,
       style: style ?? TextStyle(color: color ?? Colors.black),
+      textScaler: CommonText.textScaler,
     );
   }
 }
+
+class A {}

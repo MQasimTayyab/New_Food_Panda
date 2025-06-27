@@ -5,6 +5,7 @@ import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/imagepath.dart';
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/exclusive_page.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -54,7 +55,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         Padding(
-          padding: const EdgeInsets.only(right: 10),
+          padding: const EdgeInsets.only(right: 18),
           child: AssetImages(
             issvg: true,
             imagepath: ImagePath.heartsvg,
@@ -63,10 +64,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 25),
           child: AssetImages(
             issvg: true,
-            imagepath: ImagePath.infosvg,
+            imagepath: ImagePath.cartsvg,
             width: 30.w,
             height: 16.h,
           ),

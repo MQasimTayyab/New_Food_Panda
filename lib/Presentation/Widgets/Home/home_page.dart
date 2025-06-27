@@ -33,49 +33,50 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              //Good Evening
               GoodEvening(context),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
                   children: [
-                    //goodeving
-
                     15.Y,
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        right: 25,
-                      ),
-                      child: Column(
-                        children: [
-                          Container(
-                            width: 320.w,
-                            height: 30.h,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    offset: Offset(3, 3),
-                                  )
-                                ]),
-                            child: TextField(
-                                decoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    prefixIcon: Padding(
-                                        padding: EdgeInsets.all(3),
-                                        child: AssetImages(
-                                          width: 20.w,
-                                          height: 18.h,
-                                          imagepath: ImagePath.searchsvg,
-                                        )),
-                                    labelText: 'Search for shops & resturants',
-                                    labelStyle: AppStyles.textstyletwo(context,
-                                        color:
-                                            AppColors.black.withOpacity(0.5)))),
-                          )
-                        ],
-                      ),
+                    Column(
+                      children: [
+                        Container(
+                          // width: 320.w,
+                          height: 30.h,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  offset: Offset(3, 3),
+                                )
+                              ]),
+                          child: TextField(
+                              decoration: InputDecoration(
+                            label: CommonText(
+                              text: AppStrings.searchforshops,
+                              style: AppStyles.textstyletwo(context,
+                                  color: AppColors.black.withOpacity(0.5)),
+                            ),
+                            border: InputBorder.none,
+                            prefixIcon: Padding(
+                                padding: EdgeInsets.all(3),
+                                child: AssetImages(
+                                  width: 20.w,
+                                  height: 18.h,
+                                  imagepath: ImagePath.searchsvg,
+                                )),
+                            // labelText: 'Search for shops & resturants',
+
+                            // labelStyle: AppStyles.textstyletwo(context,
+                            //     color:
+                            //         AppColors.black.withOpacity(0.5))
+                          )),
+                        )
+                      ],
                     ),
                     15.Y,
                     // 3.Y,

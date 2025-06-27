@@ -43,6 +43,7 @@ Column CustomBanner(BuildContext context) {
       //tab container
       Container(
           height: 125.h,
+          width: 375.w,
           decoration: BoxDecoration(color: AppColors.white, boxShadow: [
             BoxShadow(
                 blurRadius: 2,
@@ -55,61 +56,65 @@ Column CustomBanner(BuildContext context) {
               child: Container(
                 width: 315.w,
                 height: 45.h,
+                padding: EdgeInsets.only(top: 5.sp, left: 10.sp),
                 decoration: BoxDecoration(
                     color: AppColors.pink,
                     borderRadius: BorderRadius.circular(5)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 5, top: 5),
-                  child: CommonText(
-                    text: AppStrings.foodfestdeals,
-                    style: AppStyles.textstylethree(context,
-                        color: AppColors.white),
-                  ),
+                child: CommonText(
+                  text: AppStrings.foodfestdeals,
+                  style:
+                      AppStyles.textstylethree(context, color: AppColors.white),
                 ),
               ),
             ),
             10.Y,
 
             //Tabbar
-            Row(children: [
-              Expanded(
-                child: DefaultTabController(
-                    length: 3,
-                    child: TabBar(
-                        labelPadding: EdgeInsets.only(
-                          right: 40,
+            Expanded(
+              child: DefaultTabController(
+                  length: 4,
+                  child: TabBar(
+                      tabAlignment: TabAlignment.start,
+                      isScrollable: true,
+                      padding: EdgeInsets.symmetric(horizontal: 30.sp),
+                      labelPadding: EdgeInsets.only(
+                        right: 32.sp,
+                      ),
+                      indicator: UnderlineTabIndicator(
+                        borderSide:
+                            BorderSide(width: 3.w, color: AppColors.pink),
+                      ),
+                      indicatorPadding: EdgeInsets.only(bottom: 5),
+                      unselectedLabelColor: AppColors.black,
+                      labelColor: AppColors.black,
+                      dividerHeight: 0,
+                      tabs: [
+                        Tab(
+                          child: CommonText(
+                            text: AppStrings.populr,
+                            style: AppStyles.textstylethree(context),
+                          ),
                         ),
-                        indicator: UnderlineTabIndicator(
-                          borderSide:
-                              BorderSide(width: 3.w, color: Colors.pink),
+                        Tab(
+                          child: CommonText(
+                            text: AppStrings.exclusionsubwaydeal,
+                            style: AppStyles.textstylethree(context),
+                          ),
                         ),
-                        indicatorPadding: EdgeInsets.only(bottom: 7),
-                        unselectedLabelColor: Color(0xff000000),
-                        labelColor: Color(0xff000000),
-                        isScrollable: true,
-                        dividerHeight: 0,
-                        tabs: [
-                          Tab(
-                            child: CommonText(
-                              text: AppStrings.populr,
-                              style: AppStyles.textstylethree(context),
-                            ),
+                        Tab(
+                          child: CommonText(
+                            text: AppStrings.crazydeal,
+                            style: AppStyles.textstylethree(context),
                           ),
-                          Tab(
-                            child: CommonText(
-                              text: AppStrings.exclusionsubwaydeal,
-                              style: AppStyles.textstylethree(context),
-                            ),
-                          ),
-                          Tab(
-                            child: CommonText(
-                              text: AppStrings.crazydeal,
-                              style: AppStyles.textstylethree(context),
-                            ),
-                          ),
-                        ])),
-              )
-            ]),
+                        ),
+                        // Tab(
+                        //   child: CommonText(
+                        //     text: AppStrings.crazydeal,
+                        //     style: AppStyles.textstylethree(context),
+                        //   ),
+                        // ),
+                      ])),
+            ),
           ]))
     ],
   );

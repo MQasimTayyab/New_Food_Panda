@@ -9,113 +9,119 @@ import 'package:food_panda/Data/imagepath.dart';
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
 
-Stack SubWay(BuildContext context) {
-  return Stack(
+Column SubWay(BuildContext context) {
+  return Column(
     children: [
-      Container(
-        color: Color(0xffEBDBE2),
-        height: 211.h,
-        width: 414.w,
-        child: AssetImages(
-          issvg: false,
-          imagepath: ImagePath.subwayjohar,
-          fit: BoxFit.fill,
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(left: 25, right: 25, top: 15),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              width: 30.w,
-              height: 30.h,
-              decoration: BoxDecoration(
-                  color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-              child: GestureDetector(
-                onTap: () {
-                  Navigate.pop(context);
-                },
-                child: Center(
-                  child: AssetImages(
-                    width: 15.w,
-                    height: 14.h,
-                    issvg: true,
-                    imagepath: ImagePath.back,
-                  ),
-                ),
-              ),
+      Stack(
+        children: [
+          Container(
+            color: Color(0xffEBDBE2),
+            height: 211.h,
+            width: 414.w,
+            child: AssetImages(
+              issvg: false,
+              imagepath: ImagePath.subwayjohar,
+              fit: BoxFit.fill,
             ),
-            Row(
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 25, right: 25, top: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
                   width: 30.w,
                   height: 30.h,
                   decoration: BoxDecoration(
                       color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-                  child: Center(
-                    child: AssetImages(
-                      width: 15.w,
-                      height: 17.h,
-                      issvg: true,
-                      imagepath: ImagePath.sharesvg,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigate.pop(context);
+                    },
+                    child: Center(
+                      child: AssetImages(
+                        width: 15.w,
+                        height: 14.h,
+                        issvg: true,
+                        imagepath: ImagePath.back,
+                      ),
                     ),
                   ),
                 ),
-                5.x,
-                Container(
-                  width: 30.w,
-                  height: 30.h,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFC4C4C4), shape: BoxShape.circle),
-                  child: Center(
-                    child: AssetImages(
-                      width: 20.w,
-                      height: 20.h,
-                      issvg: true,
-                      imagepath: ImagePath.infosvg,
+                Row(
+                  children: [
+                    Container(
+                      width: 30.w,
+                      height: 30.h,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFC4C4C4), shape: BoxShape.circle),
+                      child: Center(
+                        child: AssetImages(
+                          width: 15.w,
+                          height: 17.h,
+                          issvg: true,
+                          imagepath: ImagePath.sharesvg,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
+                    5.x,
+                    Container(
+                      width: 30.w,
+                      height: 30.h,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFC4C4C4), shape: BoxShape.circle),
+                      child: Center(
+                        child: AssetImages(
+                          width: 20.w,
+                          height: 20.h,
+                          issvg: true,
+                          imagepath: ImagePath.infosvg,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.only(top: 55),
-        child: Column(
-          children: [
-            Center(
-                child: CommonText(
-              text: AppStrings.subwayjohartown,
-              style: AppStyles.textstylefive(context, color: AppColors.white),
-            )),
-            10.Y,
-            Container(
-              width: 82.w,
-              height: 26.h,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Center(
-                child: CommonText(
-                  text: AppStrings.deliverythirty,
-                  style: AppStyles.textstyleone(
-                    context,
-                    color: AppColors.white,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 55),
+            child: Column(
+              children: [
+                Center(
+                    child: CommonText(
+                  text: AppStrings.subwayjohartown,
+                  style:
+                      AppStyles.textstylefive(context, color: AppColors.white),
+                )),
+                10.Y,
+                Container(
+                  width: 82.w,
+                  height: 26.h,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Center(
+                    child: CommonText(
+                      text: AppStrings.deliverythirty,
+                      style: AppStyles.textstyleone(
+                        context,
+                        color: AppColors.white,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                10.Y,
+                CommonText(
+                  text: AppStrings.starfour,
+                  style:
+                      AppStyles.textstyleone(context, color: AppColors.white),
+                )
+              ],
             ),
-            10.Y,
-            CommonText(
-              text: AppStrings.starfour,
-              style: AppStyles.textstyleone(context, color: AppColors.white),
-            )
-          ],
-        ),
-      )
+          )
+        ],
+      ),
     ],
   );
 }

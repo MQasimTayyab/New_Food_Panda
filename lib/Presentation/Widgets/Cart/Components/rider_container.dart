@@ -18,7 +18,7 @@ Padding Rider(BuildContext context) {
             offset: Offset(3, 3))
       ]),
       width: 315.w,
-      height: 72.h,
+      height: 80.h,
       child: Row(
         children: [
           AssetImages(

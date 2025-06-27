@@ -4,6 +4,7 @@ import 'package:food_panda/Data/app_colors.dart';
 import 'package:food_panda/Data/app_strings.dart';
 import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/extenstions.dart';
+
 import 'package:food_panda/Presentation/Common/common_text.dart';
 
 Column ChooseDrinks() {
@@ -55,7 +56,7 @@ Column ChooseDrinks() {
           );
         },
       ),
-      15.Y,
+      14.Y,
       //second drink..
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -101,7 +102,7 @@ Column ChooseDrinks() {
           );
         },
       ),
-      15.Y,
+      14.Y,
       //third drink
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -147,7 +148,7 @@ Column ChooseDrinks() {
           );
         },
       ),
-      15.Y,
+      14.Y,
       //four drink
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,

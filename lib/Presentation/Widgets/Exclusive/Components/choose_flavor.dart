@@ -55,7 +55,7 @@ Column ChooseFlavor() {
           );
         },
       ),
-      15.Y,
+      14.Y,
       //second flavour..
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -101,7 +101,7 @@ Column ChooseFlavor() {
           );
         },
       ),
-      15.Y,
+      14.Y,
       //third flovor
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,
@@ -147,7 +147,7 @@ Column ChooseFlavor() {
           );
         },
       ),
-      15.Y,
+      14.Y,
       //four flover
       ValueListenableBuilder<int>(
         valueListenable: selectedIndex,

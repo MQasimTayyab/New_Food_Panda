@@ -12,6 +12,7 @@ import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/cart_page.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_drinks.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_flavor.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/Components/controller.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/exclusive_text.dart';
 
 class ExclusivePage extends StatefulWidget {
@@ -25,6 +26,10 @@ class _ExclusivePageState extends State<ExclusivePage> {
   final ValueNotifier<int> _counter = ValueNotifier<int>(1);
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(-1);
   final ValueNotifier<String> selectedFlavor = ValueNotifier<String>('');
+
+  get increment => null;
+
+  get decrement => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +77,7 @@ class _ExclusivePageState extends State<ExclusivePage> {
                   ),
                 ],
               ),
-              30.Y,
+              25.Y,
 
               //exclusive parent colume
               Padding(
@@ -80,7 +85,7 @@ class _ExclusivePageState extends State<ExclusivePage> {
                 child: Column(
                   children: [
                     ExclusiveText(context),
-                    20.Y,
+                    18.Y,
                     Container(
                       decoration: BoxDecoration(
                         border: Border(
@@ -91,7 +96,7 @@ class _ExclusivePageState extends State<ExclusivePage> {
                         ),
                       ),
                     ),
-                    15.Y,
+                    13.Y,
                     //choose flavor
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +134,7 @@ class _ExclusivePageState extends State<ExclusivePage> {
                     //value notifer
                     //
                     ChooseFlavor(),
-                    25.Y,
+                    18.Y,
 
                     //choose drinks
                     Column(
@@ -172,115 +177,68 @@ class _ExclusivePageState extends State<ExclusivePage> {
                   ],
                 ),
               ),
-              20.Y,
+              25.Y,
 
-              Container(
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      width: 1.w,
-                      color: Colors.grey.withOpacity(0.3),
-                    ),
-                  ),
-                ),
-              ),
-              20.Y,
+              // Container(
+              //   decoration: BoxDecoration(
+              //     border: Border(
+              //       bottom: BorderSide(
+              //         width: 1.w,
+              //         color: Colors.grey.withOpacity(0.3),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // 25.Y,
 
-              //button and increment
+              //increment and decrement button
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ValueListenableBuilder<int>(
-                        valueListenable: _counter,
-                        builder: (context, value, child) {
-                          return Row(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  if (_counter.value > 1) {
-                                    _counter.value--;
-                                  }
-                                },
-                                child: Container(
-                                  width: 35.w,
-                                  height: 35.h,
-                                  decoration: BoxDecoration(
-                                    color: value > 1
-                                        ? AppColors.pink
-                                        : Color(0xFFDADADA),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Center(
-                                      child: Icon(
-                                    Icons.remove,
-                                    color: AppColors.white,
-                                  )
-
-                                      // child: CommonText(
-                                      //   text: AppStrings.sub,
-                                      //   style: AppStyles.textstylefive(context,
-                                      //       color: AppColors.white),
-                                      // ),
-                                      ),
-                                ),
-                              ),
-                              10.x,
-
-                              // Counter value display
-                              ValueListenableBuilder<int>(
-                                valueListenable: _counter,
-                                builder: (context, value, child) {
-                                  return Center(
-                                    child: CommonText(
-                                      text: value.toString(),
-                                      style: AppStyles.textstylefive(context),
-                                    ),
-                                  );
-                                },
-                              ),
-                              10.x,
-
-                              // Increment button
-                              GestureDetector(
-                                onTap: () {
-                                  _counter.value++;
-                                },
-                                child: Container(
-                                  width: 35.w,
-                                  height: 35.h,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.pink,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.add,
-                                      color: AppColors.white,
-                                    ),
-                                    // child: CommonText(
-                                    //   text: AppStrings.add,
-                                    //   style: AppStyles.textstylefive(context,
-                                    //       color: AppColors.white),
-                                    // ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          );
-                        }),
-                    CommonButton(
-                        text: AppStrings.addtocart,
-                        onPressed: () {
-                          Navigate.to(context, CartPage());
-                        })
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       Counter(increment),
+              //       CommonButton(
+              //           text: AppStrings.addtocart,
+              //           onPressed: () {
+              //             Navigate.to(context, CartPage());
+              //           })
+              //     ],
+              //   ),
+              // ),
 
               // button
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80.h,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          boxShadow: [
+            BoxShadow(
+                blurRadius: 2,
+                color: Colors.grey.withOpacity(0.5),
+                offset: Offset(0, -3))
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Counter(increment),
+              SizedBox(
+                width: 166.w,
+                height: 38.h,
+                child: CommonButton(
+                    text: AppStrings.addtocart,
+                    onPressed: () {
+                      Navigate.to(context, CartPage());
+                    }),
+              )
             ],
           ),
         ),

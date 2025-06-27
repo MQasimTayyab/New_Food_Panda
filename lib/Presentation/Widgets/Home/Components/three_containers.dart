@@ -10,53 +10,57 @@ import 'package:food_panda/Presentation/Common/common_text.dart';
 
 Row ThreeContainers(BuildContext context) {
   return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Column(
-        children: [
-          Container(
-            width: 147.w,
-            height: 199.h,
-            decoration: BoxDecoration(
-              color: AppColors.ellow,
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 15),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AssetImages(
-                      width: 110.w,
-                      height: 73.h,
-                      issvg: false,
-                      imagepath: ImagePath.pandamart,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10, bottom: 25),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CommonText(
-                              text: AppStrings.pandamart,
-                              style: AppStyles.textstylefour(context,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            CommonText(
-                              text: AppStrings.everydayupto20,
-                              style: AppStyles.textstyletwo(context,
-                                  fontWeight: FontWeight.w400),
-                            )
-                          ],
-                        ),
+      Expanded(
+        child: Column(
+          children: [
+            Container(
+              // width: 147.w,
+              height: 199.h,
+              decoration: BoxDecoration(
+                color: AppColors.ellow,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(top: 15),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AssetImages(
+                        width: 110.w,
+                        height: 73.h,
+                        issvg: false,
+                        imagepath: ImagePath.pandamart,
+                        fit: BoxFit.cover,
                       ),
-                    )
-                  ]),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10, bottom: 25),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CommonText(
+                                text: AppStrings.pandamart,
+                                style: AppStyles.textstylefour(context,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              CommonText(
+                                text: AppStrings.everydayupto20,
+                                style: AppStyles.textstyletwo(context,
+                                    fontWeight: FontWeight.w400),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ]),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       20.x,
       Column(
@@ -93,10 +97,11 @@ Row ThreeContainers(BuildContext context) {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     AssetImages(
-                        width: 60.w,
-                        height: 55.h,
-                        issvg: false,
-                        imagepath: ImagePath.pickup),
+                      width: 60.w,
+                      height: 55.h,
+                      issvg: false,
+                      imagepath: ImagePath.pickup,
+                    ),
                   ],
                 )
               ],
@@ -124,13 +129,11 @@ Row ThreeContainers(BuildContext context) {
                       CommonText(
                         text: AppStrings.shops,
                         style: AppStyles.textstylefour(context,
-                            fontWeight: FontWeight.w600),
+                            fontsize: 10.sp, fontWeight: FontWeight.w600),
                       ),
                       CommonText(
                         text: AppStrings.grocery,
-                        style: AppStyles.textstyleone(
-                          context,
-                        ),
+                        style: AppStyles.textstyleone(context, fontsize: 8.sp),
                       )
                     ],
                   ),

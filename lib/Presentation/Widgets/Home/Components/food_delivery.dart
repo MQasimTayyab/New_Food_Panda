@@ -8,11 +8,10 @@ import 'package:food_panda/Data/imagepath.dart';
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
 
-Row FoodDelivery(BuildContext context) {
-  return Row(
+Column FoodDelivery(BuildContext context) {
+  return Column(
     children: [
       Container(
-        width: 320.w,
         height: 135.h,
         decoration: BoxDecoration(
           color: AppColors.pink,

@@ -1,6 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_panda/Presentation/Widgets/Cart/cart_page.dart';
+import 'package:food_panda/Presentation/Widgets/FoodDeals/food_deals.dart';
 
 import 'package:food_panda/splash_screen.dart';
 
@@ -24,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {

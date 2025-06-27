@@ -87,14 +87,16 @@ class StackImages extends StatelessWidget {
           children: [
             CommonText(
               text: title,
-              style: AppStyles.textstylethree(context,
-                  fontWeight: FontWeight.bold),
+              style: AppStyles.textstylethree(
+                context,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             3.Y,
             CommonText(
               text: subtitle,
               style: AppStyles.textstylethree(context,
-                  fontWeight: FontWeight.w300),
+                  fontsize: 10.sp, fontWeight: FontWeight.w300),
             ),
             2.Y,
             CommonText(
