@@ -10,8 +10,8 @@ import 'package:food_panda/Presentation/Common/commonBtn.dart';
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/cart_page.dart';
-import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_drinks.dart';
-import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_flavor.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/Components/Drinks/choose_drinks.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/Components/Flavor/choose_flavor.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/Counter/counter_components.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/exclusive_text.dart';
 

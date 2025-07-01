@@ -6,13 +6,13 @@ import 'package:food_panda/Data/app_strings.dart';
 import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/extenstions.dart';
 import 'package:food_panda/Data/imagepath.dart';
-import 'package:food_panda/Presentation/Common/commonBtn.dart';
+
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/Components/rider_container.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/Components/sub_total.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/Components/total_amount.dart';
-import 'package:food_panda/main.dart';
+
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});

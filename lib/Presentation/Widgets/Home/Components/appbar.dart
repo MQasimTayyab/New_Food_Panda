@@ -5,7 +5,7 @@ import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/imagepath.dart';
 import 'package:food_panda/Presentation/Common/common_images.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
-import 'package:food_panda/Presentation/Widgets/Exclusive/exclusive_page.dart';
+
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({

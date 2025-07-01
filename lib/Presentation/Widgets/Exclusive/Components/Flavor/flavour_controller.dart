@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_drinks.dart';
-import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_flavor.dart';
 
 class FlavourController {
   final Map<String, int> chooseFlavor = {

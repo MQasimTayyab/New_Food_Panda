@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_panda/Data/app_colors.dart';
 
 import 'package:food_panda/Data/extenstions.dart';
-import 'package:food_panda/Presentation/Widgets/Cart/Components/total_amount.dart';
+
 import 'package:food_panda/Presentation/Widgets/FoodDeals/Components/banner.dart';
 
 import 'package:food_panda/Presentation/Widgets/FoodDeals/Components/popular.dart';
