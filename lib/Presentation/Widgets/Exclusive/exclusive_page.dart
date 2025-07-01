@@ -12,7 +12,7 @@ import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/cart_page.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_drinks.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/choose_flavor.dart';
-import 'package:food_panda/Presentation/Widgets/Exclusive/Components/controller.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/Components/Counter/counter_components.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/exclusive_text.dart';
 
 class ExclusivePage extends StatefulWidget {
@@ -23,7 +23,6 @@ class ExclusivePage extends StatefulWidget {
 }
 
 class _ExclusivePageState extends State<ExclusivePage> {
-  final ValueNotifier<int> _counter = ValueNotifier<int>(1);
   final ValueNotifier<int> selectedIndex = ValueNotifier<int>(-1);
   final ValueNotifier<String> selectedFlavor = ValueNotifier<String>('');
 
@@ -173,7 +172,7 @@ class _ExclusivePageState extends State<ExclusivePage> {
                     10.Y,
                     //value
                     //drinks components
-                    ChooseDrinks()
+                    ChooseDrinks(),
                   ],
                 ),
               ),

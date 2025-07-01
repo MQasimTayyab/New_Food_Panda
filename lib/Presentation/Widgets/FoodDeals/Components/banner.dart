@@ -72,7 +72,7 @@ Column CustomBanner(BuildContext context) {
             //Tabbar
             Expanded(
               child: DefaultTabController(
-                  length: 4,
+                  length: 3,
                   child: TabBar(
                       tabAlignment: TabAlignment.start,
                       isScrollable: true,

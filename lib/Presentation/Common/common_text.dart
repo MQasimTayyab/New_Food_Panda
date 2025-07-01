@@ -22,5 +22,3 @@ class CommonText extends StatelessWidget {
     );
   }
 }
-
-class A {}

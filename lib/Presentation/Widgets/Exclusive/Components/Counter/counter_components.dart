@@ -5,6 +5,7 @@ import 'package:food_panda/Data/app_colors.dart';
 
 import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/extenstions.dart';
+import 'counter_controller.dart';
 
 import 'package:food_panda/Presentation/Common/common_text.dart';
 
@@ -16,16 +17,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  final ValueNotifier<int> _counter = ValueNotifier<int>(1);
-  void increment() {
-    _counter.value++;
-  }
-
-  void decrement() {
-    if (_counter.value > 1) {
-      _counter.value--;
-    }
-  }
+  CounterController counter = CounterController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +27,12 @@ class _CounterState extends State<Counter> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ValueListenableBuilder<int>(
-              valueListenable: _counter,
+              valueListenable: counter.counterValue,
               builder: (context, value, child) {
                 return Row(
                   children: [
                     GestureDetector(
-                      onTap: decrement,
+                      onTap: counter.decrement,
                       // onTap: () {
                       //   if (_counter.value > 1) {
                       //     _counter.value--;
@@ -71,7 +63,7 @@ class _CounterState extends State<Counter> {
 
                     // Counter value display
                     ValueListenableBuilder<int>(
-                      valueListenable: _counter,
+                      valueListenable: counter.counterValue,
                       builder: (context, value, child) {
                         return Center(
                           child: CommonText(
@@ -85,7 +77,7 @@ class _CounterState extends State<Counter> {
 
                     // Increment button
                     GestureDetector(
-                      onTap: increment,
+                      onTap: counter.increment,
 
                       // onTap: () {
                       //   _counter.value++;
