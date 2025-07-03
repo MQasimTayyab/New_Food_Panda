@@ -7,6 +7,7 @@ import 'package:food_panda/Data/extenstions.dart';
 
 import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/Drinks/drinks_controller.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/add_controller.dart';
 
 class ChooseDrinks extends StatefulWidget {
   static var entries;
@@ -18,15 +19,16 @@ class ChooseDrinks extends StatefulWidget {
 }
 
 class _ChooseDrinksState extends State<ChooseDrinks> {
-  DrinksController Controller = DrinksController();
+  final SelectionController controller = SelectionController();
+  DrinksController drinksController = DrinksController();
 
   @override
   Widget build(BuildContext context) {
-    final entries = Controller.entries;
+    final entries = drinksController.entries;
     return SizedBox(
         height: 135.h,
         child: ValueListenableBuilder<int>(
-            valueListenable: Controller.selectedIndex,
+            valueListenable: drinksController.selectedIndex,
             builder: (context, index, _) {
               return ListView.separated(
                   itemCount: entries.length,
@@ -34,11 +36,14 @@ class _ChooseDrinksState extends State<ChooseDrinks> {
                   itemBuilder: (context, index) {
                     final entry = entries[index];
                     final isSelected =
-                        Controller.selectedIndex.value == entry.value;
+                        drinksController.selectedIndex.value == entry.value;
                     // final isSelected = index == entry.key;
                     return GestureDetector(
                       onTap: () {
-                        Controller.select(entry.key, entry.value);
+                        drinksController.select(entry.key, entry.value);
+                        controller.selectedDrink.value = entry.key;
+                        controller.selectedDrinkPrice.value = entry.value;
+                        // Controller.select(entry.key, entry.value);
                         // selectedIndex.value = entry.value;
                         // selectedDrink.value = entry.key;
                       },

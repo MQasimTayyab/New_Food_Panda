@@ -6,6 +6,7 @@ import 'package:food_panda/Data/app_styles.dart';
 import 'package:food_panda/Data/extenstions.dart';
 import 'package:food_panda/Presentation/Common/common_text.dart';
 import 'package:food_panda/Presentation/Widgets/Exclusive/Components/Flavor/flavour_controller.dart';
+import 'package:food_panda/Presentation/Widgets/Exclusive/add_controller.dart';
 
 class ChooseFlavor extends StatefulWidget {
   const ChooseFlavor({super.key});
@@ -16,6 +17,7 @@ class ChooseFlavor extends StatefulWidget {
 
 class _ChooseFlavor extends State<ChooseFlavor> {
   FlavourController flavourController = FlavourController();
+  final SelectionController controller = SelectionController();
   // final Map<String, dynamic> chooseFlavour = {
   //   'Chicken Tikka': 12,
   //   'Chicken Teriyaki': 43,
@@ -46,6 +48,9 @@ class _ChooseFlavor extends State<ChooseFlavor> {
                 return GestureDetector(
                   onTap: () {
                     flavourController.select(entry.key, entry.value);
+                    controller.selectedFlavour.value = entry.key;
+                    controller.selectedFlavourPrice.value = entry.value;
+                    // flavourController.select(entry.key, entry.value);
                     // selectedIndex.value = entry.value;
                     // selectedFlavor.value = entry.key;
                   },
@@ -72,6 +77,9 @@ class _ChooseFlavor extends State<ChooseFlavor> {
                                 text: entry.key,
                                 style: AppStyles.textstylethree(context),
                               ),
+                              // Text(
+                              //   '\$${entry.value}',
+                              // )
                               CommonText(
                                 text: entry.value.toString(),
                                 style: AppStyles.textstylethree(context,

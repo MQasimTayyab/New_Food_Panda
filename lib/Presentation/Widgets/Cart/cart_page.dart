@@ -13,7 +13,6 @@ import 'package:food_panda/Presentation/Widgets/Cart/Components/rider_container.
 import 'package:food_panda/Presentation/Widgets/Cart/Components/sub_total.dart';
 import 'package:food_panda/Presentation/Widgets/Cart/Components/total_amount.dart';
 
-
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
@@ -129,6 +128,6 @@ class CartPage extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: Container(height: 100.h, child: Total(context)));
+        bottomNavigationBar: Container(height: 150.h, child: Total(context)));
   }
 }

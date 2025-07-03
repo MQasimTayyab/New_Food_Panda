@@ -178,35 +178,6 @@ class _ExclusivePageState extends State<ExclusivePage> {
               ),
               25.Y,
 
-              // Container(
-              //   decoration: BoxDecoration(
-              //     border: Border(
-              //       bottom: BorderSide(
-              //         width: 1.w,
-              //         color: Colors.grey.withOpacity(0.3),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // 25.Y,
-
-              //increment and decrement button
-
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 25),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       Counter(increment),
-              //       CommonButton(
-              //           text: AppStrings.addtocart,
-              //           onPressed: () {
-              //             Navigate.to(context, CartPage());
-              //           })
-              //     ],
-              //   ),
-              // ),
-
               // button
             ],
           ),
@@ -228,7 +199,7 @@ class _ExclusivePageState extends State<ExclusivePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Counter(increment),
+              Counter(),
               SizedBox(
                 width: 166.w,
                 height: 38.h,
